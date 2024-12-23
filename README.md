@@ -67,7 +67,7 @@
 </head>
 <body>
     <header>
-        <h1>Catálogo de Produtos</h1>
+        <h1>Recomendações dos Vídeos</h1>
     </header>
     <div class="container">
         <div class="product-card">
