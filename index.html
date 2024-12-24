@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recomendações dos Vídeos</title>
+    <title>Só Promo Top - Recomendações dos Vídeos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,18 +11,66 @@
             padding: 0;
             background-color: #f4f4f9;
         }
+
         header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
+            position: relative;
+            height: 250px;
             text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("fotos/logo.jpg"); /* Alterar para a URL desejada */
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Escurece a imagem */
+            z-index: -1;
+        }
+
+        header .content {
+            z-index: 1;
+        }
+
+        header .logo-site {
+            border-radius: 999px;
+            width: 120px;
+            height: 120px;
+        }
+
+        header h1 {
+            margin: 20px 0 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px black; /* Bordas pretas no texto */
+        }
+
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
         }
+
         .product-card {
             background: white;
             border: 1px solid #ddd;
@@ -32,24 +80,23 @@
             text-align: center;
             transition: transform 0.2s ease;
         }
+
         .product-card:hover {
             transform: scale(1.05);
         }
+
         .product-card img {
-            width: 40%;
-            height: 100%;
+            width: 100%;
+            height: 200px;
             object-fit: cover;
         }
+
         .product-card h3 {
             margin: 15px 0;
             font-size: 1.2em;
             color: #333;
         }
-        .product-card p {
-            color: #777;
-            font-size: 0.9em;
-            margin: 0 10px 10px;
-        }
+
         .product-card button {
             background-color: #007bff;
             color: white;
@@ -60,6 +107,7 @@
             cursor: pointer;
             font-size: 1em;
         }
+
         .product-card button:hover {
             background-color: #0056b3;
         }
@@ -67,49 +115,58 @@
 </head>
 <body>
     <header>
-        <h1>Recomendações dos Vídeos</h1>
+        <div class="content">
+            <img src="fotos/logo.jpg" alt="Logo" class="logo-site" />
+            <h3>@sopromotopreal</h3>
+            <h2>Recomendações dos Vídeos</h2>
+        </div>
     </header>
-    <!-- coluna1-->
+
     <div class="container">
-        <a href="https://amzn.to/3VTaSTa"><div class="product-card">
-            <img src="fotos/71ANJQTALWL._AC_SL1500_.jpg" alt="Produto 1">
-            <h3>PlayStation®5 Slim Edição Digital com 2 Jogos</h3>
-            <button>Ver Oferta</button>
-        </div></a>
-        <a href="https://amzn.to/4iRLsyZ"><div class="product-card">
-            <img src="fotos/51+jLhjO3PL._AC_SX679_.jpg" alt="Produto 2">
-            <h3>Smartphone Samsung Galaxy A15 4G 256GB Super AMOLED- Verde Claro</h3>
-        
-            <button>Ver Oferta</button>
-        </div></a>
-        <a href="https://amzn.to/40575EO"><div class="product-card">
-            <img src="fotos/71vlIs4qG4L._AC_SY879_.jpg" alt="Produto 3">
-            <h3>Mop Spray 360° Rodo C/ Reservatório 400ML Multiuso 2 Refis Microfibra Todos Pisos</h3>
-            
-            <button>Ver Oferta</button>
-        </div></a>
-        
+        <!-- Itens existentes -->
+        <a href="https://amzn.to/3VTaSTa">
+            <div class="product-card">
+                <img src="fotos/71ANJQTALWL._AC_SL1500_.jpg" alt="Produto 1"/>
+                <h3>PlayStation®5 Slim Edição Digital com 2 Jogos</h3>
+                <button>Ver Oferta</button>
+            </div>
+        </a>
+        <a href="https://amzn.to/4iRLsyZ">
+            <div class="product-card">
+                <img src="fotos/51+jLhjO3PL._AC_SX679_.jpg" alt="Produto 2"/>
+                <h3>Smartphone Samsung Galaxy A15 4G 256GB Super AMOLED - Verde Claro</h3>
+                <button>Ver Oferta</button>
+            </div>
+        </a>
+        <a href="https://amzn.to/40575EO">
+            <div class="product-card">
+                <img src="fotos/71vlIs4qG4L._AC_SY879_.jpg" alt="Produto 3"/>
+                <h3>Mop Spray 360° Rodo C/ Reservatório 400ML Multiuso 2 Refis Microfibra</h3>
+                <button>Ver Oferta</button>
+            </div>
+        </a>
+        <!-- Novos itens -->
+        <!-- <a href="#">
+            <div class="product-card">
+                <img src="fotos/sample1.jpg" alt="Produto 4"/>
+                <h3>Fone de Ouvido Bluetooth XYZ</h3>
+                <button>Ver Oferta</button>
+            </div>
+        </a>
+        <a href="#">
+            <div class="product-card">
+                <img src="fotos/sample2.jpg" alt="Produto 5"/>
+                <h3>Notebook Gamer ABC 16GB RAM</h3>
+                <button>Ver Oferta</button>
+            </div>
+        </a>
+        <a href="#">
+            <div class="product-card">
+                <img src="fotos/sample3.jpg" alt="Produto 6"/>
+                <h3>Cafeteira Elétrica Ultra X</h3>
+                <button>Ver Oferta</button>
+            </div>
+        </a> -->
     </div>
-        <!-- coluna2-->
-    <!-- <div class="container">
-        <div class="product-card">
-            <img src="fotos/71ANJQTALWL._AC_SL1500_.jpg" alt="Produto 1">
-            <h3>PlayStation®5 Slim Edição Digital com 2 Jogos</h3>
-            <button>Ver Oferta</button>
-        </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300" alt="Produto 2">
-            <h3>Produto 2</h3>
-            <p>Descrição curta do produto 2.</p>
-            <button>Ver Oferta</button>
-        </div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300" alt="Produto 3">
-            <h3>Produto 3</h3>
-            <p>Descrição curta do produto 3.</p>
-            <button>Ver Oferta</button>
-        </div>
-        
-    </div> -->
 </body>
 </html>
