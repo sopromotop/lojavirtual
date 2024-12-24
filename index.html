@@ -14,12 +14,13 @@
 
         header {
             position: relative;
-            height: 250px;
-            text-align: center;
-            color: white;
+            height: 150px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            /* background: url("fotos/logo.jpg") center/cover no-repeat; */
+            color: white;
             overflow: hidden;
         }
 
@@ -30,10 +31,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("fotos/logo.jpg"); /* Alterar para a URL desejada */
+            background-image: url("fotos/logo.jpg");
             background-size: cover;
             background-position: center;
             filter: blur(8px);
+            -webkit-filter: blur(8px); /* Para navegadores baseados em WebKit */
+            -moz-filter: blur(8px); /* Para navegadores baseados em Gecko */
+            -o-filter: blur(8px); /* Para navegadores baseados em Presto */
+            -ms-filter: blur(8px); /* Para navegadores baseados em Trident */
             z-index: -1;
         }
 
@@ -44,31 +49,64 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Escurece a imagem */
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
 
-        header .content {
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
             z-index: 1;
         }
 
-        header .logo-site {
-            border-radius: 999px;
-            width: 120px;
-            height: 120px;
+        .header-content .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        header h1 {
-            margin: 20px 0 0;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 5px black; /* Bordas pretas no texto */
+        .header-content .logo-section img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+        }
+
+        .header-content .actions-section {
+            text-align: right;
+        }
+
+        .header-content .actions-section img {
+            width: 120px;
+        }
+
+        .header-content .actions-section button {
+            display: block;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .header-content .actions-section button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
         }
 
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            gap: 10px;
+            padding: 10px;
         }
 
         .product-card {
@@ -86,13 +124,13 @@
         }
 
         .product-card img {
-            width: 100%;
-            height: 200px;
+            width: 150px;
+            height: 100%;
             object-fit: cover;
         }
 
         .product-card h3 {
-            margin: 15px 0;
+            margin: 10px 0;
             font-size: 1.2em;
             color: #333;
         }
@@ -115,58 +153,63 @@
 </head>
 <body>
     <header>
-        <div class="content">
-            <img src="fotos/logo-min.jpg" alt="Logo" class="logo-site" />
-            <h3>@sopromotopreal</h3>
-            <h2>Recomendações dos Vídeos</h2>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="fotos/sopromotop-logo.jpg" alt="Logo Só Promo Top">
+                <h3>@sopromotopreal</h3>
+                
+            </div>
+            <div class="actions-section">
+                <img src="fotos/influenciador-magalu.png" alt="Magalu Influencer">
+<button onclick="location.href='https://www.magazinevoce.com.br/magazinetudobras/'" type="button">Abrir Loja Magalu</button>
+            </div>
         </div>
     </header>
-
+    <h2>Recomendações dos Vídeos</h2>
     <div class="container">
-        <!-- Itens existentes -->
+        <!-- Catálogo -->
         <a href="https://amzn.to/3VTaSTa">
             <div class="product-card">
-                <img src="fotos/71ANJQTALWL._AC_SL1500_.jpg" alt="Produto 1"/>
+                <img src="fotos/71ANJQTALWL._AC_SL1500_.jpg" alt="Produto 1">
                 <h3>PlayStation®5 Slim Edição Digital com 2 Jogos</h3>
                 <button>Ver Oferta</button>
             </div>
         </a>
         <a href="https://amzn.to/4iRLsyZ">
             <div class="product-card">
-                <img src="fotos/51+jLhjO3PL._AC_SX679_.jpg" alt="Produto 2"/>
+                <img src="fotos/51+jLhjO3PL._AC_SX679_.jpg" alt="Produto 2">
                 <h3>Smartphone Samsung Galaxy A15 4G 256GB Super AMOLED - Verde Claro</h3>
                 <button>Ver Oferta</button>
             </div>
         </a>
         <a href="https://amzn.to/40575EO">
             <div class="product-card">
-                <img src="fotos/71vlIs4qG4L._AC_SY879_.jpg" alt="Produto 3"/>
+                <img src="fotos/71vlIs4qG4L._AC_SY879_.jpg" alt="Produto 3">
                 <h3>Mop Spray 360° Rodo C/ Reservatório 400ML Multiuso 2 Refis Microfibra</h3>
                 <button>Ver Oferta</button>
             </div>
         </a>
-        <!-- Novos itens -->
-        <!-- <a href="#">
+        <a href="#">
             <div class="product-card">
-                <img src="fotos/sample1.jpg" alt="Produto 4"/>
+                <img src="fotos/sample1.jpg" alt="Produto 4">
                 <h3>Fone de Ouvido Bluetooth XYZ</h3>
                 <button>Ver Oferta</button>
             </div>
         </a>
         <a href="#">
             <div class="product-card">
-                <img src="fotos/sample2.jpg" alt="Produto 5"/>
+                <img src="fotos/sample2.jpg" alt="Produto 5">
                 <h3>Notebook Gamer ABC 16GB RAM</h3>
                 <button>Ver Oferta</button>
             </div>
         </a>
         <a href="#">
             <div class="product-card">
-                <img src="fotos/sample3.jpg" alt="Produto 6"/>
+                <img src="fotos/sample3.jpg" alt="Produto 6">
                 <h3>Cafeteira Elétrica Ultra X</h3>
                 <button>Ver Oferta</button>
             </div>
-        </a> -->
+        </a>
     </div>
 </body>
 </html>
